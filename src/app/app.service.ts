@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -8,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class AppService {
 
 
-  constructor(private http: HttpClient,private snackBar: MatSnackBar){}
+  constructor(private http: HttpClient,private snackBar: MatSnackBar,private router: Router){}
 
   getEventDetailsTable() {
     return this.http.get("http://localhost:3000/api/book");
@@ -21,7 +22,8 @@ export class AppService {
     this.http.post<{message: string, data: any}>("http://localhost:3000/api/book", BookData)
     .subscribe((response) => {
       // console.log(response);
-      this.snackBar.open("Book Added", "OK", {panelClass:['success'],verticalPosition: 'bottom',horizontalPosition: 'right'});
+      this.snackBar.open("Book Added", "OK", {panelClass:['success'],verticalPosition: 'bottom',horizontalPosition: 'center'});
+      this.router.navigate(['/list']);
     },err => {
       console.log(err);
     })
