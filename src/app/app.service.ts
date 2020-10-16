@@ -27,7 +27,7 @@ export class AppService {
       })};
     }))
     .subscribe((transformaedData) => {
-      // console.log(transformaedpostData);
+      // console.log(transformaedData);
       this.myBooks = transformaedData.myBooks;
       this.myBooksUpdated.next({
         myBooks : [...this.myBooks]
@@ -35,7 +35,9 @@ export class AppService {
     });
   }
 
-  getMyEventUpdateListenerTable() {
+  getMyBookUpdateListenerTable() {
+
+    console.log(this.myBooks);
     return this.myBooks;
   }
 
@@ -48,7 +50,7 @@ export class AppService {
     },err => {
       console.log(err);
     })
-
+    // console.log(BookData);
   }
 
 }

@@ -20,7 +20,7 @@ exports.getBookDetailsTable = (req,res,next) => {
 }
 
 exports.addBook = (req,res,next) => {
-
+  // console.log(req.body.title);
   const book = new BookModel({
     title: req.body.title,
     author: req.body.author,

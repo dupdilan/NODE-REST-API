@@ -18,8 +18,8 @@ export class BookListComponent {
 
   ngOnInit() {
 
-    this.appService.getEventDetailsTable();
-    this.books  = this.appService.getMyEventUpdateListenerTable();
+    this.books  =this.appService.getEventDetailsTable();
+    // this.books  = this.appService.getMyBookUpdateListenerTable();
     console.log(this.books);
     this.dataSource = new MatTableDataSource(this.books);
   }
