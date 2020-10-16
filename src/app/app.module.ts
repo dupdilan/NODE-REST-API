@@ -10,12 +10,14 @@ import { MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, Mat
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CoronaTableComponent } from './corona-table/corona-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
-    BookAddComponent
+    BookAddComponent,
+    CoronaTableComponent
   ],
   imports: [
     BrowserModule,
