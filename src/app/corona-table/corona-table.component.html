@@ -1,11 +1,16 @@
-<h1>View Book ListWorks!!!</h1>
+<h1 class="text-center bg-white rounded" style="font-family: 'Lobster'; " >VIEW ALL COVID-19 DETAILS</h1>
+<div class="container text-center">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" [routerLink]="'../list'" class="btn btn-outline-primary">GO TO HOME PAGE</button>
+  </div>
+</div>
 <div>
-  <mat-form-field>
+  <mat-form-field style="margin-left: 45%;">
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Title">
   </mat-form-field>
 
-  <table style="width: 1400px;padding: 10px;" mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width-table ">
+  <table style="width: 1500px;margin-left: 5%;"  mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width-table ">
 
     <ng-container matColumnDef="Country">
       <th mat-header-cell *matHeaderCellDef> TITLE </th>
