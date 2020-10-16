@@ -14,16 +14,17 @@ import { AppService } from 'src/app/app.service';
 export class BookListComponent {
 
   private books: any;
-  displayedColumns: string[] = ['title',  'description' , 'start', 'end', 'startAssign', 'endAssign', 'PostedDate'];
+  displayedColumns: string[] = ['title',  'author' , 'cost', 'sales'];
   private dataSource: any;
-  private myeventsSub: Subscription;
+  private mybooksSub: Subscription;
   constructor(public appService: AppService) {}
 
   ngOnInit() {
 
-    this.books  = this.appService.getEventDetailsTable();
+    this.appService.getEventDetailsTable();
+    this.books  = this.appService.getMyEventUpdateListenerTable();
     console.log(this.books);
-    this.dataSource = new MatTableDataSource(this.books);
+    // this.dataSource = new MatTableDataSource(this.books);
   }
 
   applyFilter(event: Event) {

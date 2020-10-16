@@ -8,6 +8,8 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { BookAddComponent } from './components/book-add/book-add.component';
 import { MatFormFieldModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
