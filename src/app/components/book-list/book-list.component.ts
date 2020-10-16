@@ -3,9 +3,6 @@ import { MatTableDataSource } from '@angular/material';
 import { Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
-
-
-
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
@@ -24,7 +21,7 @@ export class BookListComponent {
     this.appService.getEventDetailsTable();
     this.books  = this.appService.getMyEventUpdateListenerTable();
     console.log(this.books);
-    // this.dataSource = new MatTableDataSource(this.books);
+    this.dataSource = new MatTableDataSource(this.books);
   }
 
   applyFilter(event: Event) {

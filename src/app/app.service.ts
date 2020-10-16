@@ -40,8 +40,8 @@ export class AppService {
   }
 
   addBook(title: string, author: string,cost: number,sales: number) {
-    const data={title,author,cost,sales}
-    this.http.post<{message: string, data: any}>("http://localhost:3000/api/book", data)
+    const BookData = {title, author, cost, sales};
+    this.http.post<{message: string, data: any}>("http://localhost:3000/api/book", BookData)
     .subscribe((response) => {
       // console.log(response);
       this.snackBar.open("Book Added", "OK", {panelClass:['success'],verticalPosition: 'bottom',horizontalPosition: 'right'});
