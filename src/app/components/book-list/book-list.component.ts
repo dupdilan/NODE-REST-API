@@ -10,18 +10,22 @@ import { AppService } from 'src/app/app.service';
 })
 export class BookListComponent {
 
-  private books: any;
+  private bookData: any;
   displayedColumns: string[] = ['title',  'author' , 'cost', 'sales'];
   private dataSource: any;
-  private mybooksSub: Subscription;
   constructor(public appService: AppService) {}
 
   ngOnInit() {
 
-    this.books  =this.appService.getEventDetailsTable();
-    // this.books  = this.appService.getMyBookUpdateListenerTable();
-    console.log(this.books);
-    this.dataSource = new MatTableDataSource(this.books);
+    // this.books  =this.appService.getEventDetailsTable();
+    // // this.books  = this.appService.getMyBookUpdateListenerTable();
+    // console.log(this.books);
+    // this.dataSource = new MatTableDataSource(this.books);
+    this.appService.getEventDetailsTable().subscribe(result => {
+      this.bookData = result;
+      console.log(result);
+      this.dataSource = new MatTableDataSource(this.bookData);
+    });
   }
 
   applyFilter(event: Event) {
